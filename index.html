@@ -12,13 +12,16 @@
     <header>
         <h1 class="name">MD JAHANGEER</h1>
         <nav class="nav">
-            <a href="#" class="active"> Home</a>
-            <!-- <a href="#">Services</a> -->
+            <a href="#index" class="active">Home</a>
             <a href="skills.html">Skills</a>
             <a href="education.html">Education</a>
             <a href="contact.html">Contact</a>
         </nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
     </header>
+    
+    
+    
     <section class="home">
         <div class="home-img">
             <a href="Jahangeer_photo.jpg"><img src="Jahangeer_photo.jpg" alt=""></a>
@@ -40,6 +43,13 @@
             <a href="resume..pdf" class="btn">Resume</a>
         </div>
     </section>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector(".nav");
+            nav.classList.toggle("active");
+        }
+    </script>
+    
 </body>
 
 </html>
