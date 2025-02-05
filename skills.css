@@ -54,18 +54,19 @@ body{
     letter-spacing: 1px;
 }
 header {
-    margin-top: 20px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 100;
+    z-index: 1000;
+    border-bottom: 2px solid #b74b4b;
 }
+
 
 nav a {
     font-size: 1.8rem;
@@ -117,7 +118,6 @@ nav a.active {
     color: #b74b4b;
     font-size: 3rem;
 }
-
 /* Menu Icon - Hidden by default */
 .menu-icon {
     font-size: 3rem;
