@@ -12,14 +12,31 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
     background-color: black;
     color: white;
+    padding-top: 80px; /* Prevent content from hiding under navbar */
+}
+
+/* Header & Navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 9%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 2px solid #b74b4b;
 }
 
 .name {
@@ -27,18 +44,8 @@ body {
     font-size: 3rem;
 }
 
-header {
-    margin-top: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 9%;
-    background-color: transparent;
+nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
 }
 
 nav a {
@@ -56,41 +63,18 @@ nav a.active {
     border-bottom: 3px solid #b74b4b;
 }
 
-@media (max-width: 995px) {
-    nav {
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 50%;
-        padding: 1rem;
-        background-color: #161616;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 2rem 0;
-    }
-
-    nav a:hover,
-    nav a.active {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
-    }
+/* Menu Icon for Mobile */
+.menu-icon {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    display: none;
 }
 
+/* Home Section */
 section {
     min-height: 100vh;
-    padding: 5rem 9%;
+    padding: 8rem 9%; /* Increased padding to avoid overlap */
 }
 
 .home {
@@ -98,6 +82,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    text-align: left;
     background-color: black;
 }
 
@@ -139,6 +124,7 @@ span {
     transform: scale(1.05);
 }
 
+/* Social Icons */
 .social-icons a {
     display: inline-flex;
     justify-content: center;
@@ -161,6 +147,7 @@ span {
     box-shadow: 0 0 25px #b74b4b;
 }
 
+/* Resume Button */
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -181,23 +168,25 @@ span {
     color: black;
     box-shadow: 0 0 25px #b74b4b;
 }
-.typing-text{
+
+/* Typing Text Animation */
+.typing-text {
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
 }
 
-.typing-text span{
+.typing-text span {
     position: relative;
 }
 
-.typing-text span::before{
+.typing-text span::before {
     content: "Student";
     color: #b74b4b;
     animation: words 10s infinite;
 }
 
-.typing-text span::after{
+.typing-text span::after {
     content: "";
     background-color: black;
     position: absolute;
@@ -208,8 +197,6 @@ span {
     animation: cursor 0.6s infinite;
 }
 
-
-
 @keyframes cursor {
     to {
         border-left: 3px solid #b74b4b;
@@ -217,36 +204,70 @@ span {
 }
 
 @keyframes words {
-    0%, 20% {
-        content: "Student";
-    }
-    21%, 40% {
-        content: "Learner";
-    }
-    41%, 60% {
-        content: "Frontend Designer";
-    }
-    61%, 80% {
-        content: "Self motivator";
-    }
+    0%, 20% { content: "Student"; }
+    21%, 40% { content: "Learner"; }
+    41%, 60% { content: "Frontend Designer"; }
+    61%, 80% { content: "Self motivator"; }
 }
 
-@media (max-width: 1000px) {
-    .home {
-        gap: 4rem;
+/* Responsive Design */
+@media (max-width: 995px) {
+    header {
+        padding: 1rem 5%;
     }
-}
 
-@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 3rem;
+        z-index: 101;
+    }
+
+    nav {
+        position: absolute;
+        display: none;
+        top: 5rem;
+        right: 0;
+        width: 60%;
+        background-color: #161616;
+        border-left: 3px solid #b74b4b;
+        border-bottom: 3px solid #b74b4b;
+        border-bottom-left-radius: 2rem;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 1rem 0;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
     .home {
         flex-direction: column;
         text-align: center;
+        margin-top: 7rem;
     }
 
-    /* .home-img img {
-        width: 80vw;
-        margin-top: 4rem;
-    } */
+    .home-img {
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .home-img img {
+        width: 70vw;
+    }
+
+    .home-content {
+        padding: 0 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -272,49 +293,5 @@ span {
         width: 3rem;
         height: 3rem;
         font-size: 1.6rem;
-    }
-}
-/* Menu Icon - Hidden by default */
-.menu-icon {
-    font-size: 3rem;
-    color: white;
-    cursor: pointer;
-    display: none; /* Hidden on larger screens */
-}
-
-/* Show the menu icon on small screens */
-@media (max-width: 995px) {
-    .menu-icon {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        right: 3rem;
-    }
-
-    /* Hide the nav by default */
-    .nav {
-        position: absolute;
-        display: none;
-        top: 5rem;
-        right: 0;
-        width: 50%;
-        background-color: #161616;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-    }
-
-    .nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 1rem 0;
-    }
-
-    /* Show navbar when active */
-    .nav.active {
-        display: flex;
     }
 }
