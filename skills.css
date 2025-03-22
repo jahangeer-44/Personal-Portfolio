@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,49 +9,17 @@
     outline: none;
     font-family: 'Poppins', sans-serif;
 }
+
 html {
     font-size: 62.5%;
 }
-body{
-    
+
+body {
     background-color: black;
     color: white;
 }
-.portfolio {
-    margin: 150px 0;
-    padding: 0 5rem;
-}
-.portfolio-content{
-    padding-top: 60px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.line{
-     
-    color:#b74b4b;
-    font-size: 28px;
-}
 
-/* utility class */
-.my-heading {
-    font-size: 2.5rem;
-    margin: 0;
-}
-.text-center {
-    text-align: center;
-}
-
-.small-para {
-    font-size: 22px;
-    color: #fff;
-}
-.greet-heading {
-    font-size: 1.5rem;
-    font-weight:300;
-    margin: 0;
-    letter-spacing: 1px;
-}
+/* Header */
 header {
     position: fixed;
     top: 0;
@@ -67,6 +34,10 @@ header {
     border-bottom: 2px solid #b74b4b;
 }
 
+.name {
+    color: #b74b4b;
+    font-size: 3rem;
+}
 
 nav a {
     font-size: 1.8rem;
@@ -83,50 +54,15 @@ nav a.active {
     border-bottom: 3px solid #b74b4b;
 }
 
-@media (max-width: 995px) {
-    nav {
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 50%;
-        padding: 1rem;
-        background-color: #161616;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 2rem 0;
-    }
-
-    nav a:hover,
-    nav a.active {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
-    }
-}
-.name {
-    color: #b74b4b;
-    font-size: 3rem;
-}
-/* Menu Icon - Hidden by default */
+/* Menu Icon */
 .menu-icon {
     font-size: 3rem;
     color: white;
     cursor: pointer;
-    display: none; /* Hidden on larger screens */
+    display: none;
 }
 
-/* Show the menu icon on small screens */
+/* Responsive Navbar */
 @media (max-width: 995px) {
     .menu-icon {
         display: block;
@@ -135,7 +71,6 @@ nav a.active {
         right: 3rem;
     }
 
-    /* Hide the nav by default */
     .nav {
         position: absolute;
         display: none;
@@ -157,8 +92,76 @@ nav a.active {
         margin: 1rem 0;
     }
 
-    /* Show navbar when active */
     .nav.active {
         display: flex;
+    }
+}
+
+/* Portfolio Section */
+.portfolio {
+    margin: 150px 0;
+    padding: 0 5rem;
+}
+
+.portfolio-content {
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Skill Categories */
+.my-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.my-col {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 320px; /* Adjusted width */
+    text-align: center;
+    transition: 0.3s;
+    overflow: hidden; /* Prevents text overflow */
+    word-wrap: break-word; /* Ensures text wraps properly */
+}
+
+.my-col:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Utility Classes */
+.line {
+    color: #b74b4b;
+    font-size: 2.4rem;
+}
+
+.greet-heading {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.small-para {
+    font-size: 1.8rem;
+    color: white;
+    word-wrap: break-word; /* Wrap long words */
+    overflow-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .my-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-col {
+        width: 90%;
     }
 }

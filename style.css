@@ -207,7 +207,7 @@ span {
 @keyframes words {
     0%, 20% { content: "Student"; }
     21%, 40% { content: "Learner"; }
-    41%, 60% { content: "Frontend Designer"; }
+    41%, 60% { content: "Web Designer"; }
     61%, 80% { content: "Self motivator"; }
 }
 
