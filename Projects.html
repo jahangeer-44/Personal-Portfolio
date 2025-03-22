@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Projects</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="name">MD JAHANGEER</h1>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="#" class="active">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="education.html">Education</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </header>
+
+    <section class="portfolio">
+        <div class="my-row">
+            <h2 class="section-title">Projects</h2>
+            <div class="portfolio-content">
+                <div class="my-col">
+                    <div class="category">
+                        <h3 class="category-title">React</h3>
+                        <div class="project">
+                            <a href="https://github.com/jahangeer-44/NewsHub">NewsHub <i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-col">
+                    <div class="category">
+                        <h3 class="category-title">JavaScript, HTML, CSS</h3>
+                        <div class="project">
+                            <a href="https://jahangeer-44.github.io/Personal-Portfolio/">Personal Portfolio <i
+                                    class="fas fa-link"></i></a>
+                        </div>
+                        <div class="project">
+                            <a href="https://jahangeer-44.github.io/Weather/">Weather App <i
+                                    class="fas fa-link"></i></a>
+                        </div>
+                        <div class="project">
+                            <a href="https://jahangeer-44.github.io/Random_Password_Generator/">Password
+                                Generator <i class="fas fa-link"></i></a>
+                        </div>
+                        <div class="project">
+                            <a href="https://jahangeer-44.github.io/tic-tac-toe/">Tic-Tac-Toe <i
+                                    class="fas fa-link"></i></a>
+                        </div>
+                        <div class="project">
+                            <a href="https://github.com/jahangeer-44/Netflix_Clone">Netflix Clone <i
+                                    class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="my-col">
+                    <div class="category">
+                        <h3 class="category-title">Bootstrap</h3>
+                        <div class="project">
+                            <a href="https://jahangeer-44.github.io/Leader_Board/dashboard.html">Leader Board <i
+                                    class="fas fa-link"></i></a>
+                        </div>
+                        <div class="project">
+                            <a href="https://jahangeer-44.github.io/CMR_College/homepage.html">CMR College <i
+                                    class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector(".nav");
+            nav.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
